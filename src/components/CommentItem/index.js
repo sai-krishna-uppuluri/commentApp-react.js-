@@ -12,8 +12,8 @@ const CommentItem = props => {
 
   const likeTextClass = isLiked ? 'active-button' : 'button'
   const likeImageUrl = isLiked
-    ? 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
-    : 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
+    ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
+    : 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
 
   const onClickLikeButton = () => {
     const {toggleIsLiked} = props

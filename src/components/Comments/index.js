@@ -85,12 +85,17 @@ class Comments extends Component {
     const {commentList} = this.state
 
     return commentList.map(eachComment => (
-      <CommentItem key={eachComment.id} eachComment={eachComment} />
+      <CommentItem
+        key={eachComment.id}
+        eachComment={eachComment}
+        toggleIsLiked={this.toggleIsLiked}
+        deleteComment={this.deleteComment}
+      />
     ))
   }
 
   render() {
-    const {nameInput, commentInput} = this.state
+    const {nameInput, commentInput, commentList} = this.state
 
     return (
       <div className="app-container">
@@ -126,7 +131,9 @@ class Comments extends Component {
             />
           </div>
           <hr className="line" />
-          <p className="comments-description">Comments </p>
+          <p className="comments-description">
+            <span>{commentList.length}</span>Comments
+          </p>
           <ul className="comment-list">{this.renderCommentList()}</ul>
         </div>
       </div>
